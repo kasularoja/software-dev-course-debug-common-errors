@@ -3,8 +3,6 @@
 Overview
 In this activity, you will receive three short JavaScript programs,
 each containing a different type of error (syntax, runtime, and logic)
-along with a brief explanation of what the program is supposed to do.
-Your task is to identify the error, correct it, and verify the fix.
 
 Instructions
 Debugging Steps:
@@ -24,23 +22,28 @@ Think about which debugging methods you found most useful and how you might appl
 // Description:
 // This program is intended to display a simple prompt in the console but fails to run.
 
-console.log("Welcome to the bootcamp
+console.log("Welcome to the bootcamp"); 
 
 // What’s Wrong?
+//Syntax error
+// Missing closing quote and paranthesis at the end of the string. 
 
 
 // Program B
 // Description:
 // This code attempts to multiply each number in an array by 2 and display the results. However, it crashes at runtime.
 
-let numbers = [2, 4, "eight"];
+let numbers = [2, 4, 8]; 
 for (let i = 0; i < numbers.length; i++) {
   let doubled = numbers[i] * 2;
   console.log(doubled);
 }
 
-// What’s Wrong?
 
+
+// What’s Wrong?
+//Runtime error
+//The code attempts to multiply each element of the array by 2, but "eight" is a string.
 
 
 // Program C (Logic Error)
@@ -51,12 +54,14 @@ function isPrime(num) {
   if (num < 2) return false;
   for (let i = 2; i < num; i++) {
     if (num % i === 0) {
-      return true;  // Supposed to indicate num is NOT prime
+      return false;  // Supposed to indicate num is NOT prime
     }
   }
-  return false; // Supposed to indicate num IS prime
+  return true; // Supposed to indicate num IS prime
 }
 
 console.log(isPrime(7)); // Expected true but gets false
 
 // What’s Wrong?
+//logic error
+//The logic for determining whether a number is prime is incorrect. Specifically, when a divisor is found, the function returns true, which incorrectly indicates the number is prime instead of not prime. The function should return false if a divisor is found.
